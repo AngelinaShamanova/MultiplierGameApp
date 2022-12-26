@@ -11,6 +11,8 @@
 		9D84E8E1295A461A00205F1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D84E8E0295A461A00205F1B /* ContentView.swift */; };
 		9D84E8E3295A461C00205F1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D84E8E2295A461C00205F1B /* Assets.xcassets */; };
 		9D84E8E6295A461C00205F1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D84E8E5295A461C00205F1B /* Preview Assets.xcassets */; };
+		9D84E8ED295A4DDD00205F1B /* BlockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D84E8EC295A4DDD00205F1B /* BlockItem.swift */; };
+		9D84E8EF295A52F600205F1B /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D84E8EE295A52F600205F1B /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		9D84E8E0295A461A00205F1B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9D84E8E2295A461C00205F1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D84E8E5295A461C00205F1B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9D84E8EC295A4DDD00205F1B /* BlockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockItem.swift; sourceTree = "<group>"; };
+		9D84E8EE295A52F600205F1B /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				9D84E8DE295A461A00205F1B /* MultiplierGameAppApp.swift */,
 				9D84E8E0295A461A00205F1B /* ContentView.swift */,
+				9D84E8EC295A4DDD00205F1B /* BlockItem.swift */,
+				9D84E8EE295A52F600205F1B /* GameView.swift */,
 				9D84E8E2295A461C00205F1B /* Assets.xcassets */,
 				9D84E8E4295A461C00205F1B /* Preview Content */,
 			);
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D84E8ED295A4DDD00205F1B /* BlockItem.swift in Sources */,
 				9D84E8E1295A461A00205F1B /* ContentView.swift in Sources */,
+				9D84E8EF295A52F600205F1B /* GameView.swift in Sources */,
 				9D84E8DF295A461A00205F1B /* MultiplierGameAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
