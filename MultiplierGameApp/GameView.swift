@@ -15,6 +15,7 @@ struct GameView: View {
         ]
     
     var multiplierNumber: Int
+    var coreRoundsCount: Int
     
     @Environment(\.presentationMode) private var presentationMode
     
@@ -29,6 +30,10 @@ struct GameView: View {
     @State private var attempts = 0
     @State private var score = 0
     
+    @State private var showAlert = false
+    
+    @State private var roundsCount = 0
+    
     func answerColor(_ value: Int, isActive: Bool) -> Color {
         if isActive {
             return value == correctAnswer ? .green : .red
@@ -40,7 +45,7 @@ struct GameView: View {
     var body: some View {
         VStack() {
             Button {
-                presentationMode.wrappedValue.dismiss()
+                dismiss()
             } label: {
                 Image(systemName: "multiply.circle")
                     .resizable()
@@ -51,7 +56,7 @@ struct GameView: View {
             .frame(width: UIScreen.main.bounds.width, alignment: .trailing)
             .padding(.trailing)
 
-            Text("Score: \(score)")
+            Text("Score: \(score)/\(coreRoundsCount)")
                 .frame(width: UIScreen.main.bounds.width, alignment: .leading)
                 .padding([.leading, .bottom])
             Text("\(multiplierNumber) x \(choosenRandomValue) = ...")
@@ -74,22 +79,24 @@ struct GameView: View {
                         .animation(.default, value: activeAnswer == value && isAnimated)
                 }
             }
+            .customGrid()
             Spacer()
-            Button {
+            MainButton(title: "Continue") {
                 startGame()
-            } label: {
-                Text("Continue")
             }
-            .frame(width: UIScreen.main.bounds.width / 2,
-                   height: 50,
-                   alignment: .center)
-            .background(.blue)
-            .cornerRadius(8)
-            .padding(.bottom)
-
         }
         .onAppear {
             startGame()
+        }
+        .alert("Game over", isPresented: $showAlert) {
+            Button("Start again with same multiplier", role: .cancel) {
+                resetGame()
+            }
+            Button("Finish", role: .destructive, action: {
+                dismiss()
+            })
+        } message: {
+            Text("Score: \(score)/\(coreRoundsCount)")
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.teal)
@@ -97,10 +104,22 @@ struct GameView: View {
     }
     
     func checkForAnswer() {
+        roundsCount += 1
         attempts += 1
         if activeAnswer == correctAnswer && attempts == 1 {
             score += 1
         }
+        checkForRounds()
+    }
+    
+    func checkForRounds() {
+        if roundsCount == coreRoundsCount {
+            showAlert = true
+        }
+    }
+    
+    func dismiss() {
+        presentationMode.wrappedValue.dismiss()
     }
     
     func message() -> String {
@@ -124,10 +143,16 @@ struct GameView: View {
         }
         answers.insert(correctAnswer, at: Int.random(in: 0...8))
     }
+    
+    func resetGame() {
+        roundsCount = 0
+        score = 0
+        startGame()
+    }
 }
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(multiplierNumber: 2)
+        GameView(multiplierNumber: 2, coreRoundsCount: 2)
     }
 }

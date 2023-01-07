@@ -16,7 +16,7 @@ struct ContentView: View {
     
     @State private var isAnimated = false
     @State private var activeMultiplierNumber: Int?
-    @State private var questionsCount = 5
+    @State private var roundsCount = 5
     
     @State private var gameIsOpened = false
     
@@ -38,34 +38,28 @@ struct ContentView: View {
                             .animation(.default, value: activeMultiplierNumber == value && isAnimated)
                     }
                 }
+                .customGrid()
                 Spacer()
                 VStack(alignment: .leading) {
                     Text("Rounds counter")
                         .font(.title3.smallCaps())
-                    Stepper("\(questionsCount) rounds",
-                            value: $questionsCount,
+                    Stepper("\(roundsCount) rounds",
+                            value: $roundsCount,
                             in: 5...40,
                             step: 5)
                 }
                 .padding(.all, 20)
                 Spacer()
-                Button {
+                MainButton(title: "Continue") {
                     gameIsOpened = true
-                } label: {
-                    Text("Continue")
                 }
-                .frame(width: UIScreen.main.bounds.width / 2,
-                       height: 50,
-                       alignment: .center)
-                .background(.blue)
-                .cornerRadius(8)
-                .padding(.bottom)
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Multiplier Game")
             .foregroundColor(.white)
             .background(Color.teal)
-            .fullScreenCover(isPresented: $gameIsOpened) { GameView(multiplierNumber: activeMultiplierNumber ?? 1)
+            .fullScreenCover(isPresented: $gameIsOpened) {
+                GameView(multiplierNumber: activeMultiplierNumber ?? 1, coreRoundsCount: roundsCount)
             }
         }
     }

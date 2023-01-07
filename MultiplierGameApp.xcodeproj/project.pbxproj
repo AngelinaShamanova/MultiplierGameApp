@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D80A51A296A1EDB007D488D /* CustomGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80A519296A1EDB007D488D /* CustomGrid.swift */; };
+		9D80A51D296A1F3B007D488D /* View + Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80A51C296A1F3B007D488D /* View + Modifiers.swift */; };
+		9D80A51F296A1F99007D488D /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80A51E296A1F99007D488D /* MainButton.swift */; };
 		9D84E8DF295A461A00205F1B /* MultiplierGameAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D84E8DE295A461A00205F1B /* MultiplierGameAppApp.swift */; };
 		9D84E8E1295A461A00205F1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D84E8E0295A461A00205F1B /* ContentView.swift */; };
 		9D84E8E3295A461C00205F1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D84E8E2295A461C00205F1B /* Assets.xcassets */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D80A519296A1EDB007D488D /* CustomGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGrid.swift; sourceTree = "<group>"; };
+		9D80A51C296A1F3B007D488D /* View + Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + Modifiers.swift"; sourceTree = "<group>"; };
+		9D80A51E296A1F99007D488D /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		9D84E8DB295A461A00205F1B /* MultiplierGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiplierGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D84E8DE295A461A00205F1B /* MultiplierGameAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplierGameAppApp.swift; sourceTree = "<group>"; };
 		9D84E8E0295A461A00205F1B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +42,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D80A518296A1ECC007D488D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9D80A51C296A1F3B007D488D /* View + Modifiers.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9D80A51B296A1F1D007D488D /* Custom Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				9D80A519296A1EDB007D488D /* CustomGrid.swift */,
+			);
+			path = "Custom Modifiers";
+			sourceTree = "<group>";
+		};
 		9D84E8D2295A461A00205F1B = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +80,11 @@
 				9D84E8DE295A461A00205F1B /* MultiplierGameAppApp.swift */,
 				9D84E8E0295A461A00205F1B /* ContentView.swift */,
 				9D84E8EC295A4DDD00205F1B /* BlockItem.swift */,
+				9D80A51E296A1F99007D488D /* MainButton.swift */,
 				9D84E8EE295A52F600205F1B /* GameView.swift */,
 				9D84E8E2295A461C00205F1B /* Assets.xcassets */,
+				9D80A51B296A1F1D007D488D /* Custom Modifiers */,
+				9D80A518296A1ECC007D488D /* Extensions */,
 				9D84E8E4295A461C00205F1B /* Preview Content */,
 			);
 			path = MultiplierGameApp;
@@ -145,7 +170,10 @@
 			files = (
 				9D84E8ED295A4DDD00205F1B /* BlockItem.swift in Sources */,
 				9D84E8E1295A461A00205F1B /* ContentView.swift in Sources */,
+				9D80A51F296A1F99007D488D /* MainButton.swift in Sources */,
 				9D84E8EF295A52F600205F1B /* GameView.swift in Sources */,
+				9D80A51D296A1F3B007D488D /* View + Modifiers.swift in Sources */,
+				9D80A51A296A1EDB007D488D /* CustomGrid.swift in Sources */,
 				9D84E8DF295A461A00205F1B /* MultiplierGameAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
